@@ -3,7 +3,8 @@ if (isset($_POST['kirim'])) {
     $UangSendiri = $_POST['UangSendiri'];
     $UangTeman = $_POST['UangTeman'];
     $Hasil = $UangTeman + $UangSendiri;
-    echo " Hasil Pejumlahan Uang sendiri " . $UangSendiri . " dan Uang Teman " . $UangTeman . " = " . $Hasil;
+    echo " Hasil Pejumlahan Uang sendiri " . number_format($UangSendiri, 2, ',', '.') . " dan Uang Teman " . number_format($UangTeman, 2, ',', '.');
+    echo " adalah " . number_format($Hasil, 2, ',', '.');
 }
 
 
@@ -21,9 +22,9 @@ if (isset($_POST['kirim'])) {
 <body>
     <form action="" method="post" enctype="multipart/form-data">
         <label for="">Masukan Nilai Uang Sendiri</label>
-        <input type="text" name="UangSendiri" placeholder="Isi uang sendiri" required><br>
+        <input type="number" name="UangSendiri" placeholder="Isi uang sendiri" required><br>
         <label for="">masukkan Nilai Uang Teman</label>
-        <input type="text" name="UangTeman" placeholder="Isi uang teman" required><br>
+        <input type="number" name="UangTeman" placeholder="Isi uang teman" required><br>
         <button type="submit" name="kirim">Kirim</button>
 
     </form>
